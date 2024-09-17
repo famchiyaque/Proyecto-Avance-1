@@ -1,31 +1,31 @@
-# Proyecto: Nombre de tu proyecto
-Escribe aquí un overview general de tu proyecto
+# Proyecto-Avance-1
 
-## Descripción del avance 1
-Escribe aquí la descripción de lo que contiene este avance
+## Simulación **Bingo Americano**!
 
-## Instrucciones para compilar el avance de proyecto
-Ejecuta el siguiente comando en la terminal:
+Qué es un domingo viendo la NFL sin una apuesta?! 
+Este proyecto require de un archivo que contiene los guesses de puntajes del usuario, es decir los 5 valores númericos que 
+el usuario cree que van a ser puntajes finales de todos los partidos de football americano de la semana, y también uno que contiene los puntajes finales reales de los partidos de esa semana. 
+El programa evalúa si al menos 3 de los 5 guesses por el usuario sí fueron puntajes finales reales, para determinar si el usuario ganó o no.
 
-`g++ main.cpp -o primer_avance` 
+-------------------------------------------------------------
+## Lectura
+El programa utiliza ifstream para checar la existencia y leer los contenidos del archivo, y los guarda en un vector. 
+Se hace esto para ambos archivos, para terminar con un vector de los guesses y de los puntajes reales.
 
-## Instrucciones para ejecutar el avance de proyecto
-Ejecuta el siguiente comando en la terminal:
+## Ordenamiento
+Para este programa, el método de ordenamiento elegido es el merge sort, debido a que entre selection sort, insertion sort, y merge sort, es el más rápido de los 3 en promedio, y en su peor caso (caso que más le puede costar al algoritmo en términos de tiempo). 
+Tiene un tiempo de complejidad fijo de **O(n log(n))** siempre, solo al costo de ocupar doble el espacio de memoria que los otros 2, que, para este proyecto, **no es un problema**. 
+Los otros dos tienen como promedio un tiempo de complejidad de **O(n^2)**, que para este caso podría funcionar como el dataset es pequeño pero para las buenas prácticas, utilizaremos el método más rapido.
 
-`./primer_avance` 
+##### Resultado
+Al aplicar este sort a ambos vectores, se quedan ordenados y listos para el siguiente fase.
 
-## Descripción de las entradas del avance de proyecto
-Escribe aquí la descripción de las entradas del proyecto, por ejemplo, si de entrada se requieren varios archivos, hay que indicar el formato de cada uno de ellos, y proporcionar un ejemplo de los datos de cada archivo.
+## Evaluación de los Guesses/Búsqueda
+Ya que los vectores están ordenados, el programa itera por los valores del vector de guesses del usuario, y para cada valor utiliza el método de **búsqueda binaria** en el vector de los puntajes finales reales para ver si el guess del usuario fue correcto y determinar el score total del usuario. Necesita 3/5 mínimo para ganar. 
 
-## Descripción de las salidas del avance de proyecto
-Escribe aquí la descripción de los resultados de la ejecución de tu programa.
+También es importante mencionar que la evaluación es sin reemplazo, es decir, si el usuario adivina el puntaje *21* 5 veces, y en un partido sí hubo en equipo que terminó con 21 puntos, ese resultado se quita del vector de puntajes al econtrarse la primer vez. El usuario en ese caso necesitaría que haya 2 equipos más que terminaron con ese valor de puntos para ganar.
 
-## Desarrollo de competencias
+Igual que antes, este método de búsqueda es para optimizar el programa en términos del tiempo.
 
-### SICT0301: Evalúa los componentes
-#### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
-Escribe aquí tus argumentos sobre por qué consideras que has desarrrollado esta competencia y dónde se puede observar el desarrollo que mencionas.
-
-### SICT0302: Toma decisiones
-#### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
-Escribe aquí tus argumentos sobre por qué consideras que has desarrrollado esta competencia y dónde se puede observar el desarrollo que mencionas.
+Si el usuario sí tuvo 3 o más guesses correctos, se imprime a la consola: **"Felicidades! Has ganado!"**.
+Si no, le sale un mensaje que le indica las noticias malas.
