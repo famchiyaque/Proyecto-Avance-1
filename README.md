@@ -25,7 +25,19 @@ Ya que los vectores están ordenados, el programa itera por los valores del vect
 
 También es importante mencionar que la evaluación es sin reemplazo, es decir, si el usuario adivina el puntaje *21* 5 veces, y en un partido sí hubo en equipo que terminó con 21 puntos, ese resultado se quita del vector de puntajes al econtrarse la primer vez. El usuario en ese caso necesitaría que haya 2 equipos más que terminaron con ese valor de puntos para ganar.
 
-Igual que antes, este método de búsqueda es para optimizar el programa en términos del tiempo.
+Igual que antes, este método de búsqueda es para optimizar el programa en términos del tiempo. La búsqueda secuencial normal tiene un a complejidad de tiempo de **O(n)** (n siendo el número de elementos del vector), mientras que la búsqueda binaria tiene una complejidad de tiempo de **O(log(n))**. 
 
 Si el usuario sí tuvo 3 o más guesses correctos, se imprime a la consola: **"Felicidades! Has ganado!"**.
 Si no, le sale un mensaje que le indica las noticias malas.
+
+## Análisis Completo de Tiempo de Complejidad
+Tomando en cuenta la lectura del archivo de guesses:
+    despreciable
+La lectura de los puntajes:
+    n (cantidad de datos)
+El Ordenamiento:
+    n * log(n)
+Y la Búsqueda:
+    log(n)
+
+El programa tiene un tiempo de complejidad de **n * log(n) + log(n)**, que realmente no está tan mal. Esto será cierto aunque los archivos de datos fueran mucho más largos. 
