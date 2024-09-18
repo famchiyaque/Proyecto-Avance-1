@@ -34,13 +34,13 @@ Si no, le sale un mensaje que le indica las noticias malas.
 Tomando en cuenta la lectura del archivo de guesses:
     - despreciable
     
-La lectura de los puntajes:
+- La lectura de los puntajes:
     - n (cantidad de datos)
     
-El Ordenamiento:
+- El Ordenamiento:
     - n * log(n)
     
-Y la Búsqueda:
+- Y la Búsqueda:
     - log(n)
 
-El programa tiene un tiempo de complejidad de **n * log(n) + log(n)**, que realmente no está tan mal. Esto será cierto aunque los archivos de datos fueran mucho más largos. 
+- El programa tiene un tiempo de complejidad de **n * log(n) + log(n)**, que realmente no está tan mal. Esto será cierto aunque los archivos de datos fueran mucho más largos. 
