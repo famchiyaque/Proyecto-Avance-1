@@ -32,12 +32,15 @@ Si no, le sale un mensaje que le indica las noticias malas.
 
 ## Análisis Completo de Tiempo de Complejidad
 Tomando en cuenta la lectura del archivo de guesses:
-    despreciable
+    - despreciable
+    
 La lectura de los puntajes:
-    n (cantidad de datos)
+    - n (cantidad de datos)
+    
 El Ordenamiento:
-    n * log(n)
+    - n * log(n)
+    
 Y la Búsqueda:
-    log(n)
+    - log(n)
 
 El programa tiene un tiempo de complejidad de **n * log(n) + log(n)**, que realmente no está tan mal. Esto será cierto aunque los archivos de datos fueran mucho más largos. 
